@@ -7,7 +7,7 @@
   "description": "",
   "repository": {
     "type": "git",
-    "url": "git@github-tatiana:organizacion-prueba-repos/dependabot-demo.git"
+    "url": "git@github.com:organizacion-prueba-repos/dependabot-demo.git"
   },
   "license": "ISC",
   "author": "",
