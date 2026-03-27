@@ -3,7 +3,7 @@
   "version": "0.0.0-dev",
   "private": false,
   "scripts": {
-    "build": "echo build && exit 0",
+    "build": "mkdir dist && cp index.js dist/",
     "release": "semantic-release"
   },
   "publishConfig": {
