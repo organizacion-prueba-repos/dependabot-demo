@@ -40,3 +40,11 @@ jobs:
           files: app.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Pack npm
+        run: npm pack
+
+      - name: Upload tgz
+        uses: softprops/action-gh-release@v2
+        with:
+          files: "*.tgz"
