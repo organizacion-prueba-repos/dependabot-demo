@@ -27,26 +27,14 @@ jobs:
 
       - run: npm run build
 
+      - name: Create ZIP
+        run: zip -r app.zip dist/
+
+      - name: Pack npm
+        run: npm pack
+
       - name: Semantic Release
         run: npm run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Create ZIP
-        run: zip -r app.zip dist/
-
-      - name: Upload Release Asset
-        uses: softprops/action-gh-release@v2
-        with:
-          files: app.zip
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Pack npm
-        run: npm pack
-
-      - name: Upload tgz
-        uses: softprops/action-gh-release@v2
-        with:
-          files: "*.tgz"
